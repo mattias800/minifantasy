@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minifantasy Jukebox</title>
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b0f2a;
+        --panel: linear-gradient(#2a3a9a, #121c5c);
+        --border: #e8e8f8;
+        --text: #f4f4ff;
+        --muted: #aab0dd;
+        --accent: #ffd966;
+        --bad: #ff7a7a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 16px;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.4 system-ui, sans-serif;
+      }
+      h1 { margin: 0 0 12px; font-size: 20px; letter-spacing: 0.05em; }
+      h2 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+      section {
+        background: var(--panel);
+        border: 2px solid var(--border);
+        border-radius: 6px;
+        padding: 10px 12px 12px;
+        margin-bottom: 12px;
+      }
+      .buttons { display: flex; flex-wrap: wrap; gap: 6px; }
+      button {
+        background: #0e1540;
+        color: var(--text);
+        border: 1px solid #6a78d0;
+        border-radius: 4px;
+        padding: 5px 10px;
+        font: inherit;
+        cursor: pointer;
+      }
+      button:hover { border-color: var(--accent); }
+      button.playing { background: var(--accent); color: #111; border-color: var(--accent); }
+      .controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+      label { display: flex; gap: 6px; align-items: center; color: var(--muted); }
+      #status { color: var(--accent); min-height: 1.4em; margin-top: 8px; }
+      table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; margin-top: 8px; }
+      th, td { text-align: left; padding: 2px 8px; border-bottom: 1px solid #34408a; }
+      td.bad { color: var(--bad); }
+    </style>
+  </head>
+  <body>
+    <h1>Minifantasy Jukebox</h1>
+    <section>
+      <h2>Controls</h2>
+      <div class="controls">
+        <button id="stop">Stop music</button>
+        <label><input type="checkbox" id="mute" /> Mute</label>
+        <label>Music <input type="range" id="musicVol" min="0" max="1" step="0.05" value="0.5" /></label>
+        <label>SFX <input type="range" id="sfxVol" min="0" max="1" step="0.05" value="0.7" /></label>
+      </div>
+      <div id="status">Click anything to start audio.</div>
+    </section>
+    <section>
+      <h2>Music</h2>
+      <div class="buttons" id="music"></div>
+    </section>
+    <section>
+      <h2>Jingles</h2>
+      <div class="buttons" id="jingles"></div>
+    </section>
+    <section>
+      <h2>Sound effects</h2>
+      <div class="buttons" id="sfx"></div>
+    </section>
+    <section>
+      <h2>Offline render check</h2>
+      <p>Renders every track (intro + first seconds) and effect with an OfflineAudioContext and reports levels.</p>
+      <button id="check">Run check</button>
+      <table id="report"></table>
+    </section>
+    <script type="module" src="./audio.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+/** UI text colours. */
+export const COLOR_TEXT = '#ffffff';
+export const COLOR_DISABLED = '#8890a8';
+export const COLOR_HIGHLIGHT = '#ffe070';
+export const COLOR_LABEL = '#a8d8ff';
+export const COLOR_HEAL = '#70ff90';
+export const COLOR_DAMAGE = '#ffffff';
+export const COLOR_BAD = '#ff7070';
+export const COLOR_GOOD = '#80ffa0';

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minifantasy: Echoes of the Heartstone</title>
+    <link rel="icon" href="data:," />
+    <meta name="description" content="A tiny 16-bit style JRPG that runs in your browser." />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #screen {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        display: block;
+      }
+      #help {
+        position: fixed;
+        bottom: 6px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font: 12px/1.4 monospace;
+        color: #555;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="screen" width="256" height="224"></canvas>
+    <div id="help">Arrows/WASD move · Z/Enter confirm · X/Esc cancel &amp; menu · Shift dash · M mute · F fullscreen</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

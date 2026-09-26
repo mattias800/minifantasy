@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tileset Preview</title>
+    <link rel="icon" href="data:," />
+    <style>
+      :root { color-scheme: dark; }
+      html, body { margin: 0; background: #0b0910; color: #d8d0e8; font: 12px/1.4 ui-monospace, Consolas, monospace; }
+      body { padding: 0; }
+      body.all { padding: 12px; }
+      h2 { margin: 16px 0 6px; font-size: 13px; color: #b8a8e0; }
+      canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+      .grid-wrap { position: relative; }
+      .label {
+        position: absolute; transform: translateX(-50%); white-space: nowrap;
+        font-size: 9px; color: #c8c0dc; text-shadow: 0 1px 0 #000; pointer-events: none;
+      }
+      .maps { display: flex; flex-wrap: wrap; gap: 12px; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./tiles.ts"></script>
+  </body>
+</html>
